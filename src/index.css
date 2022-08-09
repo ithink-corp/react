@@ -3,3 +3,43 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Global styles */
+body {
+    @apply bg-stone-900;
+}
+
+[inert] {
+    @apply filter brightness-50;
+}
+
+/* Custom tailwind classes */
+@layer utilities {
+    .btn {
+        @apply uppercase filter hover:brightness-110 active:brightness-90 disabled:brightness-50;
+    }
+
+    .shadow-none {
+        box-shadow: none;
+    }
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+    width: 7px;
+
+    @apply bg-transparent;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    border: 2px solid;
+
+    @apply bg-orange-500 border-stone-700;
+}
+::-webkit-scrollbar-thumb:active {
+    @apply bg-orange-600;
+}
+::-webkit-scrollbar-track {
+    border-radius: 3px;
+    background-color: transparent;
+}
